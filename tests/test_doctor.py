@@ -116,7 +116,18 @@ class DoctorTests(unittest.TestCase):
 
     def test_doctor_warns_when_chrome_absent_but_still_ready(self):
         buf = io.StringIO()
-        with mock.patch.dict(os.environ, self._ready_env(with_chrome=False), clear=True), redirect_stdout(buf):
+        # Simulate a host where PATH clearing alone does not hide system Chrome.
+        found_chrome = self._ready_env(with_chrome=True)['XHS_CHROME_PATH']
+        with (mock.patch.dict(os.environ, self._ready_env(with_chrome=False), clear=True),
+              mock.patch.object(pipe.xhs_config, '_which', return_value=found_chrome),
+              redirect_stdout(buf)):
+            code = pipe.main(['doctor'])
+        self.assertEqual(code, 0)
+        self.assertNotIn('browser_exec', buf.getvalue())
+
+        buf = io.StringIO()
+        with mock.patch.dict(os.environ, self._ready_env(with_chrome=False), clear=True), \
+             mock.patch.object(pipe.xhs_config, '_which', return_value=None), redirect_stdout(buf):
             code = pipe.main(['doctor'])
         out = buf.getvalue()
         self.assertEqual(code, 0)  # Chrome is an optional fallback, not a core tool

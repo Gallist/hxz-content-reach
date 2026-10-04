@@ -57,7 +57,7 @@ class AstOfflineTests(unittest.TestCase):
 
 
 class ExecutionOfflineTests(unittest.TestCase):
-    def _run(self, cwd, xhs_hf_home=None, hf_home=None):
+    def _run(self, cwd, xhs_hf_home=None, hf_home=None, extra_env=None):
         record = Path(cwd, 'records.ndjson')
         stubdir = Path(cwd, 'stub')
         stubdir.mkdir()
@@ -75,9 +75,10 @@ class ExecutionOfflineTests(unittest.TestCase):
             env['HF_HOME'] = hf_home
         env['XHS_TEST_RECORD'] = str(record)
         env['PYTHONPATH'] = str(stubdir)
+        env.update(extra_env or {})
 
         result = subprocess.run([sys.executable, str(SRC), str(audio), str(out)],
-                                capture_output=True, text=True, env=env, cwd=cwd, timeout=120)
+                                capture_output=True, text=True, encoding='utf-8', env=env, cwd=cwd, timeout=120)
         rows = [json.loads(line) for line in record.read_text(encoding='utf-8').splitlines() if line.strip()]
         return result, rows
 
@@ -88,6 +89,15 @@ class ExecutionOfflineTests(unittest.TestCase):
         for row in rows:
             self.assertIs(row['kwargs'].get('local_files_only'), True)
             self.assertEqual(row['HF_HOME'], 'X:/xhs-cache')  # XHS_HF_HOME overrides HF_HOME
+
+    def test_cp1252_console_still_retries_cpu_and_reports_chinese_error(self):
+        with tempfile.TemporaryDirectory() as d:
+            result, rows = self._run(d, xhs_hf_home='X:/xhs-cache',
+                                     extra_env={'PYTHONIOENCODING': 'cp1252', 'PYTHONUTF8': '0'})
+        self.assertEqual(len(rows), 2, f'cuda + cpu attempts expected; stdout={result.stdout!r} stderr={result.stderr[-500:]!r}')
+        combined = result.stdout + result.stderr
+        self.assertIn('CUDA 失败，回退 CPU', combined)
+        self.assertIn('不会联网下载', combined)
 
     def test_missing_local_model_error_is_explicit(self):
         with tempfile.TemporaryDirectory() as d:

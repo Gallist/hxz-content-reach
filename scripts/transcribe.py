@@ -15,6 +15,12 @@ import glob
 import time
 from pathlib import Path
 
+# Keep diagnostics readable and prevent console encoding from aborting fallback.
+for _stream in (sys.stdout, sys.stderr):
+    _reconfigure = getattr(_stream, 'reconfigure', None)
+    if _reconfigure is not None:
+        _reconfigure(encoding='utf-8')
+
 # XHS_HF_HOME 必须覆盖既有 HF_HOME（显式赋值，不用 setdefault）；
 # 两者都没设时才落到用户缓存目录。
 _xhs_hf_home = os.environ.get('XHS_HF_HOME')
