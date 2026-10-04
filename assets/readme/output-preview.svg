@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660" role="img" aria-labelledby="out-title out-desc">
+  <title id="out-title">一条视频，进表就是一行素材（虚构示例）</title>
+  <desc id="out-desc">示意飞书多维表格中的一行素材，全部为虚构示例数据。左侧是保留原比例的封面；右侧依次是标题、平台、作者、类型、发布日期，点赞 12000、收藏 3400、评论 560、分享 890，逐字稿片段，以及标签、笔记链接、采集时间和备注。互动数是采集当时的快照。</desc>
+
+  <defs>
+    <linearGradient id="out-cover" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#a8dadc"/>
+      <stop offset="0.55" stop-color="#2d8b8b"/>
+      <stop offset="1" stop-color="#35506b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="660" rx="26" fill="#1a2332"/>
+  <rect x="0.5" y="0.5" width="1199" height="659" rx="26" fill="none" stroke="#35506b"/>
+
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, Segoe UI, sans-serif">
+    <text x="64" y="86" font-size="40" font-weight="700" fill="#f1faee">一条视频，进表就是一行素材</text>
+    <rect x="920" y="52" width="216" height="40" rx="20" fill="#2d8b8b" fill-opacity="0.18" stroke="#2d8b8b" stroke-opacity="0.6"/>
+    <text x="1028" y="78" text-anchor="middle" font-size="18" fill="#a8dadc">示例数据 · 均为虚构</text>
+
+    <!-- record card -->
+    <rect x="64" y="124" width="1072" height="470" rx="18" fill="#223049" stroke="#35506b"/>
+
+    <!-- cover -->
+    <g id="cover">
+      <rect x="96" y="156" width="204" height="272" rx="10" fill="url(#out-cover)"/>
+      <circle cx="198" cy="276" r="32" fill="#1a2332" fill-opacity="0.55"/>
+      <path d="M188 258 L188 294 L216 276 Z" fill="#f1faee"/>
+      <text x="198" y="402" text-anchor="middle" font-size="20" font-weight="600" fill="#1a2332">封面</text>
+      <text x="198" y="464" text-anchor="middle" font-size="18" fill="#9fb3c8">保留原比例</text>
+      <text x="198" y="492" text-anchor="middle" font-size="18" fill="#9fb3c8">横版就存横版</text>
+    </g>
+
+    <!-- fields -->
+    <g id="fields">
+      <text x="340" y="170" font-size="18" fill="#9fb3c8">标题</text>
+      <text x="340" y="206" font-size="27" font-weight="700" fill="#f1faee">示例标题：三分钟讲清一个选题方法</text>
+      <line x1="340" y1="226" x2="1104" y2="226" stroke="#35506b"/>
+
+      <text x="340" y="260" font-size="18" fill="#9fb3c8">平台</text>
+      <text x="340" y="293" font-size="22" fill="#f1faee">抖音</text>
+      <text x="531" y="260" font-size="18" fill="#9fb3c8">作者</text>
+      <text x="531" y="293" font-size="22" fill="#f1faee">示例作者</text>
+      <text x="722" y="260" font-size="18" fill="#9fb3c8">类型</text>
+      <text x="722" y="293" font-size="22" fill="#f1faee">视频</text>
+      <text x="913" y="260" font-size="18" fill="#9fb3c8">发布日期</text>
+      <text x="913" y="293" font-size="22" fill="#f1faee">2026-09-28</text>
+
+      <text x="340" y="334" font-size="18" fill="#9fb3c8">点赞</text>
+      <text x="340" y="372" font-size="30" font-weight="700" fill="#a8dadc">12000</text>
+      <text x="531" y="334" font-size="18" fill="#9fb3c8">收藏</text>
+      <text x="531" y="372" font-size="30" font-weight="700" fill="#a8dadc">3400</text>
+      <text x="722" y="334" font-size="18" fill="#9fb3c8">评论</text>
+      <text x="722" y="372" font-size="30" font-weight="700" fill="#a8dadc">560</text>
+      <text x="913" y="334" font-size="18" fill="#9fb3c8">分享</text>
+      <text x="913" y="372" font-size="30" font-weight="700" fill="#a8dadc">890</text>
+
+      <rect x="340" y="396" width="764" height="108" rx="10" fill="#1a2332" stroke="#35506b"/>
+      <rect x="340" y="396" width="4" height="108" fill="#2d8b8b"/>
+      <text x="362" y="424" font-size="18" fill="#9fb3c8">逐字稿</text>
+      <text x="362" y="456" font-size="20" fill="#f1faee">大家好，今天聊一个很多人都会遇到的问题：选题到底从哪里来？</text>
+      <text x="362" y="486" font-size="20" fill="#f1faee" fill-opacity="0.7">我自己的方法分三步。第一步，先把最近收藏的内容……</text>
+
+      <text x="340" y="536" font-size="18" fill="#9fb3c8">标签</text>
+      <rect x="340" y="547" width="58" height="30" rx="15" fill="#2d8b8b" fill-opacity="0.25"/>
+      <text x="369" y="568" text-anchor="middle" font-size="18" fill="#a8dadc">选题</text>
+      <rect x="406" y="547" width="58" height="30" rx="15" fill="#2d8b8b" fill-opacity="0.25"/>
+      <text x="435" y="568" text-anchor="middle" font-size="18" fill="#a8dadc">口播</text>
+      <text x="531" y="536" font-size="18" fill="#9fb3c8">笔记链接</text>
+      <text x="531" y="569" font-size="20" fill="#a8dadc" text-decoration="underline">原视频链接</text>
+      <text x="722" y="536" font-size="18" fill="#9fb3c8">采集时间</text>
+      <text x="722" y="569" font-size="20" fill="#f1faee">2026-10-04 13:20</text>
+      <text x="913" y="536" font-size="18" fill="#9fb3c8">备注</text>
+      <text x="913" y="569" font-size="20" fill="#f1faee">未做 AI 全文校对</text>
+    </g>
+
+    <text x="64" y="632" font-size="18" fill="#9fb3c8">互动数是采集当时的快照；再次发送同一条视频，只刷新互动数和采集时间。</text>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "href": "https://www.xiaohongshu.com/explore/abcdef0123456789abcdef01?xsec_token=EXAMPLE&xsec_source=app_share",
+  "note_id": "abcdef0123456789abcdef01",
+  "title": "示例标题（合成数据）",
+  "desc": "示例正文，仅用于离线演示，不是真实笔记。",
+  "type": "video",
+  "author": "示例作者",
+  "time": 1790952023000,
+  "ip": "示例",
+  "interact": {
+    "likedCount": "28",
+    "collectedCount": "47",
+    "commentCount": "",
+    "shareCount": "22"
+  },
+  "tags": ["示例标签"],
+  "images": [],
+  "duration": 601,
+  "streams": []
+}

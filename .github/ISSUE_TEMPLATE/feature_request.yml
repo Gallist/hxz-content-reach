@@ -1,0 +1,50 @@
+name: Feature request
+description: 提一个改进建议 / Suggest an improvement
+title: "[feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请说明**要解决的问题**，而不只是想要的实现。注意本项目的边界：默认单篇顺序处理、本地标点不改字、不调用云端全文校对、离线测试不联网。不要粘贴真实数据或凭据。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 现在哪里不好用？谁受影响？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议的做法
+      description: 你希望它怎么表现。可以是多个选项。
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 考虑过的替代方案
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: 涉及范围
+      options:
+        - 采集 / 查重
+        - 转写 / 标点
+        - 飞书写入 / 回读
+        - 配置 / doctor
+        - 文档 / 视觉资产
+        - 其它
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我没有粘贴任何真实 token、table id、笔记 id、record_id、Cookie、逐字稿或个人数据。
+          required: true

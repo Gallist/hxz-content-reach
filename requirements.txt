@@ -1,0 +1,6 @@
+# Local ASR + punctuation runtime for scripts/transcribe.py and scripts/punctuate.py.
+# Versions verified against the Windows reach ASR venv; FFmpeg is an external
+# binary, not a pip package -- see docs/INSTALL.md. No model weights are bundled.
+faster-whisper==1.2.1
+numpy==2.5.3
+sherpa-onnx==1.13.8

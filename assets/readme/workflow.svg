@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="flow-title flow-desc">
+  <title id="flow-title">发一个链接之后，Hermes 会做什么</title>
+  <desc id="flow-desc">流程示意图，不是界面截图。新视频走完整五步：发链接 → 采集页面 → 查重 → 本地转写加标点 → 写入飞书并回读确认。如果查重发现表里已有这条视频，就不重新转写、不新建重复行，只更新点赞、收藏、评论、分享和采集时间。</desc>
+
+  <defs>
+    <marker id="flow-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d8b8b"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="520" rx="26" fill="#1a2332"/>
+  <rect x="0.5" y="0.5" width="1199" height="519" rx="26" fill="none" stroke="#35506b"/>
+
+  <g font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, Segoe UI, sans-serif">
+    <text x="64" y="86" font-size="40" font-weight="700" fill="#f1faee">发一个链接之后，Hermes 会做什么</text>
+
+    <rect x="920" y="52" width="216" height="40" rx="20" fill="#2d8b8b" fill-opacity="0.18" stroke="#2d8b8b" stroke-opacity="0.6"/>
+    <text x="1028" y="78" text-anchor="middle" font-size="18" fill="#a8dadc">示意图 · 非界面截图</text>
+
+    <!-- main path: five steps -->
+    <g id="flow-nodes">
+      <g>
+        <rect x="64" y="132" width="195" height="168" rx="14" fill="#223049" stroke="#35506b"/>
+        <circle cx="96" cy="166" r="17" fill="#2d8b8b"/>
+        <text x="96" y="173" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2332">1</text>
+        <text x="84" y="222" font-size="25" font-weight="600" fill="#f1faee">发链接</text>
+        <text x="84" y="257" font-size="19" fill="#9fb3c8">小红书 / 抖音</text>
+        <text x="84" y="285" font-size="19" fill="#9fb3c8">链接或分享文字</text>
+      </g>
+      <g>
+        <rect x="283" y="132" width="195" height="168" rx="14" fill="#223049" stroke="#35506b"/>
+        <circle cx="315" cy="166" r="17" fill="#2d8b8b"/>
+        <text x="315" y="173" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2332">2</text>
+        <text x="303" y="222" font-size="25" font-weight="600" fill="#f1faee">采集页面</text>
+        <text x="303" y="257" font-size="19" fill="#9fb3c8">标题 · 作者 · 封面</text>
+        <text x="303" y="285" font-size="19" fill="#9fb3c8">互动数 · 发布日期</text>
+      </g>
+      <g>
+        <rect x="502" y="132" width="195" height="168" rx="14" fill="#223049" stroke="#a8dadc" stroke-opacity="0.7"/>
+        <circle cx="534" cy="166" r="17" fill="#2d8b8b"/>
+        <text x="534" y="173" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2332">3</text>
+        <text x="522" y="222" font-size="25" font-weight="600" fill="#f1faee">查重</text>
+        <text x="522" y="257" font-size="19" fill="#9fb3c8">表里是否已有</text>
+        <text x="522" y="285" font-size="19" fill="#9fb3c8">这条视频</text>
+      </g>
+      <g>
+        <rect x="721" y="132" width="195" height="168" rx="14" fill="#223049" stroke="#35506b"/>
+        <circle cx="753" cy="166" r="17" fill="#2d8b8b"/>
+        <text x="753" y="173" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2332">4</text>
+        <text x="741" y="222" font-size="25" font-weight="600" fill="#f1faee">本地转写</text>
+        <text x="741" y="257" font-size="19" fill="#9fb3c8">Whisper 本机运行</text>
+        <text x="741" y="285" font-size="19" fill="#9fb3c8">再自动加标点</text>
+      </g>
+      <g>
+        <rect x="940" y="132" width="195" height="168" rx="14" fill="#223049" stroke="#35506b"/>
+        <circle cx="972" cy="166" r="17" fill="#2d8b8b"/>
+        <text x="972" y="173" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2332">5</text>
+        <text x="960" y="222" font-size="25" font-weight="600" fill="#f1faee">写入飞书</text>
+        <text x="960" y="257" font-size="19" fill="#9fb3c8">新建一行素材</text>
+        <text x="960" y="285" font-size="19" fill="#9fb3c8">读回核对才报完成</text>
+      </g>
+    </g>
+
+    <g stroke="#2d8b8b" stroke-width="2.5" marker-end="url(#flow-arrow)">
+      <line x1="261" y1="216" x2="279" y2="216"/>
+      <line x1="480" y1="216" x2="498" y2="216"/>
+      <line x1="699" y1="216" x2="717" y2="216"/>
+      <line x1="918" y1="216" x2="936" y2="216"/>
+    </g>
+    <text x="708" y="122" text-anchor="middle" font-size="18" fill="#a8dadc">新视频</text>
+
+    <!-- branch: already in the table -->
+    <g id="flow-branch">
+      <path d="M599 300 L599 362" fill="none" stroke="#a8dadc" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#flow-arrow)"/>
+      <text x="612" y="338" font-size="18" fill="#a8dadc">表里已有</text>
+      <rect x="502" y="368" width="633" height="110" rx="14" fill="#2d8b8b" fill-opacity="0.12" stroke="#a8dadc" stroke-opacity="0.7" stroke-dasharray="7 6"/>
+      <text x="526" y="406" font-size="23" font-weight="600" fill="#f1faee">只更新点赞、收藏、评论、分享和采集时间</text>
+      <text x="526" y="446" font-size="20" fill="#9fb3c8">不重新转写，也不会新建重复的一行</text>
+    </g>
+
+    <!-- legend -->
+    <g id="legend">
+      <line x1="64" y1="400" x2="112" y2="400" stroke="#2d8b8b" stroke-width="3"/>
+      <text x="128" y="407" font-size="20" fill="#f1faee">新视频：走完整 5 步</text>
+      <line x1="64" y1="446" x2="112" y2="446" stroke="#a8dadc" stroke-width="3" stroke-dasharray="7 6"/>
+      <text x="128" y="453" font-size="20" fill="#f1faee">已采集过：只刷新数据</text>
+    </g>
+  </g>
+</svg>

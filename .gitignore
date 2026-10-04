@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local configuration and runtime state (never commit)
+.env
+.env.*
+.venv/
+node_modules/
+*.onnx
+*.pt
+*.ckpt
+config.local.json
+.work/
+.testtmp/
+write-state.json
+verify.ndjson
+verify.manifest.json
+
+# Media and transcripts
+*.mp4
+*.wav
+*.webp

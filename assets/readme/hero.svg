@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">hxz-content-reach：把小红书、抖音视频，变成你的飞书内容素材库</title>
+  <desc id="hero-desc">左侧是项目名、一句价值和斜杠命令。右侧示意产品机制：小红书视频链接和抖音视频链接汇入同一张飞书多维表格，每条视频成为一行素材，包含封面、标题、平台、逐字稿和点赞数。表中内容为虚构示例。</desc>
+
+  <defs>
+    <marker id="hero-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d8b8b"/>
+    </marker>
+    <linearGradient id="hero-cover-a" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a8dadc"/>
+      <stop offset="1" stop-color="#2d8b8b"/>
+    </linearGradient>
+    <linearGradient id="hero-cover-b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2d8b8b"/>
+      <stop offset="1" stop-color="#35506b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="440" rx="26" fill="#1a2332"/>
+  <rect x="0.5" y="0.5" width="1199" height="439" rx="26" fill="none" stroke="#35506b"/>
+
+  <g id="title-block" font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, Segoe UI, sans-serif">
+    <!-- motif: one "material row" slot (cover cell + field cell) -->
+    <rect x="64" y="58" width="14" height="14" rx="3" fill="#2d8b8b"/>
+    <rect x="84" y="58" width="34" height="14" rx="3" fill="#35506b"/>
+    <text x="132" y="72" font-size="20" letter-spacing="2" fill="#a8dadc">HERMES AGENT SKILL</text>
+
+    <text x="62" y="146" font-family="Segoe UI, Noto Sans CJK SC, Microsoft YaHei, sans-serif" font-size="54" font-weight="700" fill="#f1faee">hxz-content-reach</text>
+
+    <text x="64" y="214" font-size="34" font-weight="600" fill="#f1faee">把小红书、抖音视频，</text>
+    <text x="64" y="260" font-size="34" font-weight="600" fill="#f1faee">变成你的<tspan fill="#a8dadc">飞书内容素材库</tspan>。</text>
+
+    <rect x="64" y="294" width="432" height="50" rx="12" fill="#223049" stroke="#35506b"/>
+    <text x="84" y="327" font-family="Consolas, ui-monospace, SFMono-Regular, Menlo, Microsoft YaHei, monospace" font-size="21" fill="#f1faee"><tspan fill="#2d8b8b">/</tspan>hxz-content-reach <tspan fill="#9fb3c8">&lt;视频链接&gt;</tspan></text>
+
+    <text x="64" y="388" font-size="19" fill="#9fb3c8">逐字稿 · 原比例封面 · 互动数据 · 同一视频不重复建行</text>
+  </g>
+
+  <g id="sources" font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, Segoe UI, sans-serif">
+    <!-- Xiaohongshu link chip -->
+    <rect x="612" y="52" width="244" height="56" rx="14" fill="#223049" stroke="#35506b"/>
+    <rect x="628" y="64" width="32" height="32" rx="8" fill="none" stroke="#a8dadc" stroke-width="2"/>
+    <path d="M639 72 L639 88 L652 80 Z" fill="#a8dadc"/>
+    <text x="674" y="88" font-size="22" fill="#f1faee">小红书视频链接</text>
+
+    <!-- Douyin link chip -->
+    <rect x="892" y="52" width="244" height="56" rx="14" fill="#223049" stroke="#35506b"/>
+    <rect x="908" y="64" width="32" height="32" rx="8" fill="none" stroke="#a8dadc" stroke-width="2"/>
+    <path d="M919 72 L919 88 L932 80 Z" fill="#a8dadc"/>
+    <text x="954" y="88" font-size="22" fill="#f1faee">抖音视频链接</text>
+
+    <!-- both links converge into one table -->
+    <path d="M734 108 C734 132 874 124 874 150" fill="none" stroke="#2d8b8b" stroke-width="2.5" marker-end="url(#hero-arrow)"/>
+    <path d="M1014 108 C1014 132 874 124 874 150" fill="none" stroke="#2d8b8b" stroke-width="2.5"/>
+  </g>
+
+  <g id="base-table" font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, Segoe UI, sans-serif">
+    <rect x="612" y="158" width="524" height="230" rx="16" fill="#223049" stroke="#35506b"/>
+    <rect x="632" y="176" width="12" height="12" rx="2" fill="#2d8b8b"/>
+    <rect x="648" y="176" width="12" height="12" rx="2" fill="#a8dadc"/>
+    <text x="672" y="190" font-size="20" font-weight="600" fill="#f1faee">飞书多维表格 · 内容素材库</text>
+
+    <!-- column header -->
+    <line x1="612" y1="206" x2="1136" y2="206" stroke="#35506b"/>
+    <text x="632" y="234" font-size="18" fill="#9fb3c8">封面</text>
+    <text x="700" y="234" font-size="18" fill="#9fb3c8">标题</text>
+    <text x="852" y="234" font-size="18" fill="#9fb3c8">平台</text>
+    <text x="926" y="234" font-size="18" fill="#9fb3c8">逐字稿</text>
+    <text x="1116" y="234" font-size="18" fill="#9fb3c8" text-anchor="end">点赞</text>
+    <line x1="612" y1="248" x2="1136" y2="248" stroke="#35506b"/>
+
+    <!-- row 1: the row just added -->
+    <rect x="613" y="249" width="522" height="68" fill="#2d8b8b" fill-opacity="0.16"/>
+    <rect x="613" y="249" width="4" height="68" fill="#2d8b8b"/>
+    <rect x="636" y="257" width="40" height="52" rx="5" fill="url(#hero-cover-a)"/>
+    <path d="M651 274 L651 292 L664 283 Z" fill="#1a2332" fill-opacity="0.7"/>
+    <text x="700" y="291" font-size="20" fill="#f1faee">示例标题</text>
+    <text x="852" y="291" font-size="20" fill="#a8dadc">抖音</text>
+    <rect x="926" y="270" width="118" height="8" rx="4" fill="#f1faee" fill-opacity="0.75"/>
+    <rect x="926" y="286" width="86" height="8" rx="4" fill="#f1faee" fill-opacity="0.45"/>
+    <text x="1116" y="291" font-size="20" fill="#f1faee" text-anchor="end">12000</text>
+
+    <line x1="612" y1="317" x2="1136" y2="317" stroke="#35506b"/>
+
+    <!-- row 2 -->
+    <rect x="636" y="325" width="40" height="52" rx="5" fill="url(#hero-cover-b)"/>
+    <path d="M651 342 L651 360 L664 351 Z" fill="#f1faee" fill-opacity="0.55"/>
+    <text x="700" y="359" font-size="20" fill="#f1faee" fill-opacity="0.8">示例标题</text>
+    <text x="852" y="359" font-size="20" fill="#a8dadc" fill-opacity="0.8">小红书</text>
+    <rect x="926" y="338" width="104" height="8" rx="4" fill="#f1faee" fill-opacity="0.5"/>
+    <rect x="926" y="354" width="128" height="8" rx="4" fill="#f1faee" fill-opacity="0.3"/>
+    <text x="1116" y="359" font-size="20" fill="#f1faee" fill-opacity="0.8" text-anchor="end">3400</text>
+  </g>
+
+  <text x="1136" y="418" font-family="Noto Sans CJK SC, Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="16" fill="#9fb3c8" text-anchor="end">表中为虚构示例</text>
+</svg>

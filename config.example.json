@@ -1,0 +1,14 @@
+{
+  "base_token": "YOUR_FEISHU_BASE_TOKEN",
+  "table_id": "YOUR_FEISHU_TABLE_ID",
+  "lark_cli": "lark-cli",
+  "whisper_python": "C:/path/to/asr-venv/Scripts/python.exe",
+  "transcribe_script": "scripts/transcribe.py",
+  "whisper_model": "large-v3-turbo",
+  "hf_home": "C:/path/to/huggingface-cache",
+  "punct_model": "C:/path/to/ct-transformer/model.onnx",
+  "scratch_dir": ".work",
+  "chrome_path": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  "chrome_profile": "C:/path/to/chrome-profile",
+  "cdp_port": 9333
+}
