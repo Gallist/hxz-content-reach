@@ -152,6 +152,13 @@ def transcribe(audio, out, prompt=None):
 
 
 def cmd_fetch(arg, *_):
+    if platform_of(arg) == "视频号":
+        from wechat_channels import fetch as fetch_channels
+        m = re.search(r"https?://\S+", arg)
+        link = m.group(0).rstrip("，。,.") if m else arg
+        result = fetch_channels(link)
+        print(json.dumps(result, ensure_ascii=False, indent=1))
+        return
     require_base_table()
     t0 = time.time()
     m = re.search(r"https?://\S+", arg)

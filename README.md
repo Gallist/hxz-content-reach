@@ -117,3 +117,17 @@
 - 来源与授权：[docs/PROVENANCE.md](./docs/PROVENANCE.md)
 
 贡献方式见 [CONTRIBUTING.md](./CONTRIBUTING.md)，安全问题见 [SECURITY.md](./SECURITY.md)，变更记录见 [CHANGELOG.md](./CHANGELOG.md)。
+
+## 微信视频号：授权分享链接采集与本地转写（2026-10-31）
+
+新增 `scripts/wechat_channels.py`，支持已获授权的公开 `https://weixin.qq.com/sph/...` 单条视频链接：获取作品标题/作者/发布时间及互动快照、下载 H.264/H.265 媒体、FFprobe 校验音视频轨、本地 faster-whisper 转写生成 TXT/SRT/JSON。原有小红书和抖音路径不变；`xhs_pipeline.py fetch` 识别视频号分享链接并分流到新适配器。
+
+```powershell
+python scripts/wechat_channels.py fetch "https://weixin.qq.com/sph/作品ID"
+python scripts/wechat_channels.py fetch "https://weixin.qq.com/sph/作品ID" --metadata-only
+python -m unittest discover -s tests -p test_wechat_channels.py -v
+```
+
+环境变量：`HXZ_WHISPER_MODEL`（本地 faster-whisper 模型）、`HXZ_WX_OUTPUT_ROOT`（归档根目录）。该路径使用公开的第三方解析服务 `v.mtotech.com/api/resolve`，会向其发送作品分享链接，不会发送微信 Cookie、登录态或代理证书。服务变更、失效或权限不足时必须显式失败；未知互动数保留空值。输出的机器逐字稿应标为“未经逐句人工复核”。
+
+**重要边界：当前仅验证单条分享链接。暂不声称自动遍历作者主页或覆盖半年所有作品，也不将视频号直接写入原有小红书/抖音飞书库。** Notion/飞书目标库入库需单独接入并核验。

@@ -1,6 +1,6 @@
 ---
 name: hxz-content-reach
-description: 小红书 / 抖音视频链接自动采集、本地转写并录入飞书内容库（多维表格）；单篇视频默认链路。
+description: 小红书、抖音与微信视频号授权采集及视频转写；小红书和抖音支持飞书归档，视频号支持本地归档。
 metadata:
   origin: "hongshu"
 ---
@@ -64,3 +64,19 @@ python "$SKILL_DIR/scripts/xhs_pipeline.py" doctor
 - 账号/授权过期只有用户本人完成登录；模型不在聊天里接收密码或验证码。
 
 产品契约、字段映射、验收与恢复命令见 `docs/VERIFICATION.md`；安装与依赖见 `docs/INSTALL.md`；来源与授权边界见 `docs/PROVENANCE.md`；配置见 `docs/CONFIGURATION.md`。
+
+## 微信视频号｜单条采集与转写（2026-10-31 新增）
+
+识别 `https://weixin.qq.com/sph/<作品ID>` 分享链接，使用 `scripts/wechat_channels.py` 采集公开作品元数据（作者、标题、发布时间、点赞、收藏、评论、分享），下载视频并由本机 `faster-whisper` 转写。**不读取、传输微信 Cookie 或账号凭据。** 解析时公开分享链接会发送到第三方 `v.mtotech.com/api/resolve`；接口服务、时效和覆盖不保证，失败要如实报告，不能冒充成功。下载媒体保存在本机。
+
+### Windows 命令
+- `python scripts/wechat_channels.py fetch "https://weixin.qq.com/sph/作品ID"`：完整单条闭环，保存 `video.mp4`、`metadata.json`、`transcript.txt`、`subtitles.srt`、`segments.json`。
+- `python scripts/wechat_channels.py fetch "链接" --metadata-only`：只采元数据，不下载视频。
+- `python scripts/xhs_pipeline.py fetch "https://weixin.qq.com/sph/作品ID"`：同样路由到视频号适配器，不启动小红书/抖音的 Chrome 收集。
+- `HXZ_WX_OUTPUT_ROOT` 可指定输出目录，`HXZ_WHISPER_MODEL` 可指定现有 faster-whisper 模型。视频号采集不调用原有飞书 `push`，避免错误地写入小红书/抖音库。Notion 入库由明确的目标数据库与集成另行执行，并回读验证。
+
+### 验收边界
+1. 链接与 CDN 主机必须验证，缺失的互动数保持空值，不猜测为 0；一个作品 ID 一条记录，重复运行幂等覆盖同目录。
+2. FFprobe 必须同时发现视频和音轨；Whisper 用 FFmpeg 预解码 16kHz WAV，规避 PyAV 版本不匹配；字幕必须覆盖接近音频末尾；逐字稿保留时间戳并明确机器转写尚未逐句人工校对。
+3. `python -m unittest discover -s tests -p test_wechat_channels.py -v` 先做单元测试，再用实际视频号链接完成下载转写验收。
+4. **单条分享链接解析成功不等于支持账号半年历史批量**。作者主页列表需额外验证会话和分页覆盖，不得凭作品流中可见的几条推定“全量完成”。高频或受限访问应停止并报告。

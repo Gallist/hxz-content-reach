@@ -51,6 +51,8 @@ def save_write_state(workdir, record_id):
 
 
 def platform_of(text):
+    if 'weixin.qq.com/sph/' in text:
+        return '视频号'
     return '抖音' if 'douyin.com' in text else '小红书'
 
 
